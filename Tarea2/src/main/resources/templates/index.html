@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Creacion Estudiantes</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="light-blue ligthen-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo center">CRUD ESTUDIANTES</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            </ul>
+        </div>
+
+    </nav>
+    <br>
+
+
+    <section class="center">
+
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Apellido</th>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+
+    <div class="fixed-action-btn " style="bottom: 45px; right: 45px;">
+        <a id="menu" class=" modal-trigger waves-effect waves-light btn btn-floating btn-large cyan " href="#modal1"><i class="material-icons">+</i></a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal ">
+        <div class="modal-content">
+            <h4>Datos del Estudiante</h4>
+
+            <form action="#">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Nombre</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Apellido</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">assignment_ind</i>
+                                <input id="icon_prefix" type="number" class="validate">
+                                <label for="icon_prefix">Matricula</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Telefono</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            //initialize all modals           
+            $('.modal').modal();
+
+            //now you can open modal from code
+            //$('#modal1').modal('open');
+
+            //or by click on trigger
+            //$('.trigger-modal').modal();
+        });
+
+    </script>
+</body>
+
+</html>
