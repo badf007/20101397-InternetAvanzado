@@ -1,2 +1,2 @@
 # 20101397-InternetAvanzado
-All the practices of the course "Internet Avanzado" for Carlos Camacho
+All the practices for the course "Internet Avanzado" for Carlos Camacho
