@@ -1,0 +1,24 @@
+group 'Internet_Avanzado'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.sparkjava:spark-core:2.6.0"
+    compile 'com.sparkjava:spark-debug-tools:0.5'
+    compile 'com.sparkjava:spark-template-freemarker:2.5.5'
+    compile 'org.freemarker:freemarker:2.3.26-incubating'
+
+    compile group: 'com.h2database', name: 'h2', version: '1.4.194'
+
+    //Librerias de Hibernate
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
+    compile 'org.hibernate:hibernate-entitymanager:5.1.0.Final'
+}
