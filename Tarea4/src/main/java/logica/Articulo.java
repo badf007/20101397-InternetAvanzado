@@ -17,9 +17,11 @@ public class Articulo implements Serializable{
     private long id;
     private String titulo;
     private String cuerpo;
-    private String autor;
     private String fecha;
     private String cuerpo70;
+
+    @ManyToOne
+    private Usuario autor;
 
     @ManyToOne
     private Set<Comentario> listaComentarios;
@@ -40,7 +42,7 @@ public class Articulo implements Serializable{
         this.cuerpo70 = cuerpo70;
     }
 
-    public Articulo(String titulo, String cuerpo, String autor, String fecha, Set<Comentario> listacoment, Set<Etiqueta> listaetiquet) {
+    public Articulo(String titulo, String cuerpo, Usuario autor, String fecha, Set<Comentario> listacoment, Set<Etiqueta> listaetiquet) {
         this.id = id;
         this.titulo = titulo;
         this.cuerpo = cuerpo;
@@ -87,11 +89,11 @@ public class Articulo implements Serializable{
         this.cuerpo = cuerpo;
     }
 
-    public String getAutor() {
+    public Usuario getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Usuario autor) {
         this.autor = autor;
     }
 
