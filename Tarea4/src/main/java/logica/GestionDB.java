@@ -24,6 +24,7 @@ public class GestionDB<T> {
         return emf.createEntityManager();
     }
 
+
     private Object getValorCampo(T entidad){
         if(entidad == null){
             return null;
@@ -70,6 +71,7 @@ public class GestionDB<T> {
 
     }
 
+
     public T find(Object id) {
         EntityManager em = getEntityManager();
         try{
@@ -80,6 +82,7 @@ public class GestionDB<T> {
             em.close();
         }
     }
+
 
     public List<T> findAll(){
         EntityManager em = getEntityManager();
@@ -93,6 +96,7 @@ public class GestionDB<T> {
             em.close();
         }
     }
+
 
     public Usuario findAllByUser(String username){
         EntityManager em = getEntityManager();

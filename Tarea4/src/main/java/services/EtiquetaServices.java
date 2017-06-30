@@ -14,7 +14,7 @@ public class EtiquetaServices extends GestionDB<Etiqueta> {
         super(Etiqueta.class);
     }
 
-    public EtiquetaServices getInstancia(){
+    public static EtiquetaServices getInstancia(){
         if(instancia==null){
             instancia = new EtiquetaServices();
         }

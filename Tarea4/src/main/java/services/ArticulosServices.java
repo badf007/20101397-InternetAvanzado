@@ -27,6 +27,7 @@ public class ArticulosServices extends GestionDB<Articulo> {
         return instancia;
     }
     public void cargarDemo(){
-        instancia.crearEntidad(new Articulo("Primer Post","Este es elprimer post del blog", findAllByUser("lenyluna"),"16/06/2017", new HashSet<Comentario>(), new HashSet<Etiqueta>() ));
+        instancia.crearEntidad(new Articulo("Primer Post","Este es el primer post del blog", findAllByUser("lenyluna"),"16/06/2017", new HashSet<Comentario>(), new HashSet<Etiqueta>() ));
+        instancia.crearEntidad(new Articulo("Segundo Post","Este es el segundo post del blog", findAllByUser("zomgod"),"16/06/2017", new HashSet<Comentario>(), new HashSet<Etiqueta>() ));
     }
 }

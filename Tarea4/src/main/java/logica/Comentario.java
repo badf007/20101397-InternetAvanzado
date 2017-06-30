@@ -9,11 +9,16 @@ import java.io.Serializable;
 /**
  * Created by Leny96 on 15/6/2017.
  */
-public class Comentario {
+@Entity
+public class Comentario implements Serializable {
 
+    @Id
     private long id;
     private String comentario;
+
+    @OneToOne
     private Usuario autor;
+    @OneToOne
     private Articulo articulo;
 
     public Comentario(){

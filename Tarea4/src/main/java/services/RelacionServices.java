@@ -13,7 +13,7 @@ public class RelacionServices extends GestionDB<RelacionEti_Art> {
         super(RelacionEti_Art.class);
     }
 
-    public RelacionServices getInstancia(){
+    public static RelacionServices getInstancia(){
         if(instancia == null ){
             instancia = new RelacionServices();
         }

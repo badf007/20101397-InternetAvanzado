@@ -13,7 +13,7 @@ public class UsuarioServices extends GestionDB<Usuario> {
         super(Usuario.class);
     }
 
-    public UsuarioServices getInstancia(){
+    public static UsuarioServices getInstancia(){
         if(instancia==null){
             instancia= new UsuarioServices();
         }

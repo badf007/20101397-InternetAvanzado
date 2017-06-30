@@ -1,11 +1,10 @@
 package main;
 
-import Dao.*;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.Version;
 import logica.*;
-import services.ArticulosServices;
+import services.*;
 import spark.Request;
 import spark.Spark;
 
@@ -23,23 +22,20 @@ import static spark.debug.DebugScreen.enableDebugScreen;
 public class Main {
     private static final String COOKIE_NAME = "user_cookies" ;
     private static String SESSION_NAME= "username";
-    static UsuarioDao DBusuarios = new UsuarioDao();
-    static EtiquetaDao DBetiqueta = new EtiquetaDao();
-    static ArticuloDao DBarticulos = new ArticuloDao();
-    static ComenterioDao DBcomentario = new ComenterioDao();
-    static ArticuloDaoEtiqueta DBartEti = new ArticuloDaoEtiqueta();
     static ArrayList<Articulo> listArticulos = new ArrayList<>();
     //http://localhost:4567
 
 
 
     public static void main(String[] args) {
-
+        ConfigDB.getInstancia().startDb();
         staticFileLocation("/publico");
         final Configuration configuration = new Configuration(new Version(2, 3, 0));
         configuration.setClassForTemplateLoading(Main.class, "/");
-        List<Articulo> allArticulos = DBarticulos.getAllArticulos();
-        loadRelacion(allArticulos);
+        loadUsuario();
+        loadArticulo();
+        List<Articulo> allArticulos = ArticulosServices.getInstancia().findAll();
+        //loadRelacion(allArticulos);
 
         Spark.before("/guardandoarticulo",(request, response) -> {
             Usuario user = finUser(request.session().attribute(SESSION_NAME));
@@ -101,8 +97,7 @@ public class Main {
 
         Spark.post("/login/:ubicar", (request, response) -> {
             StringWriter writer = new StringWriter();
-            List<Usuario> allUsuarios = DBusuarios.getAllUsuarios();
-          //  List<Articulo> allArticulos = DBarticulos.getAllArticulos();
+            List<Usuario> allUsuarios = UsuarioServices.getInstancia().findAll();
             try {
                 String username = request.queryParams("username") != null ? request.queryParams("username") : "anonymous";
                 String password = request.queryParams("password") != null ? request.queryParams("password") : "unknown";
@@ -148,7 +143,6 @@ public class Main {
             StringWriter writer = new StringWriter();
             boolean adm = false;
             boolean aut = false;
-            //List<Usuario> allUsuarios = DBusuarios.getAllUsuarios();
             try {
                 String username = request.queryParams("username") != null ? request.queryParams("username") : "anonymous";
                 String password = request.queryParams("password") != null ? request.queryParams("password") : "unknown";
@@ -162,8 +156,7 @@ public class Main {
                 if (autor.equals("on")) {
                     aut = true;
                 }
-
-                DBusuarios.createUsuario(new Usuario(username, nombre, password, adm, aut));
+                UsuarioServices.getInstancia().crearEntidad(new Usuario(username, nombre, password, adm, aut));
                 System.out.println(administrador + " " + autor + " " + nombre + " " + username + " " + password);
                 response.redirect("/");
 
@@ -181,7 +174,7 @@ public class Main {
             return null;
         });
 
-        Spark.get("/CrearArticulo/",(request, response) -> {
+       /* Spark.get("/CrearArticulo/",(request, response) -> {
             StringWriter writer = new StringWriter();
             Usuario user = finUser(request.session().attribute(SESSION_NAME));
             Template formTemplate = configuration.getTemplate("templates/crearArticulo.ftl");
@@ -298,9 +291,20 @@ public class Main {
             response.redirect("/");
             return null;
         });
-
+        */
     }
 
+    private static void loadUsuario() {
+        if(UsuarioServices.getInstancia().findAll().size()==0){
+            UsuarioServices.getInstancia().cargarDemo();
+        }
+    }
+
+    private static void loadArticulo() {
+        if(ArticulosServices.getInstancia().findAll().size()==0){
+                ArticulosServices.getInstancia().cargarDemo();
+        }
+    }
     private static void checkCOOKIES(Request req) {
         if (req.session().attribute(SESSION_NAME) == null) {
             Map<String, String> cookies = req.cookies();
@@ -313,7 +317,7 @@ public class Main {
     }
 
     private static Usuario finUser(String username){
-        List<Usuario> allUsuarios = DBusuarios.getAllUsuarios();
+        List<Usuario> allUsuarios = UsuarioServices.getInstancia().findAll();
         for(Usuario user: allUsuarios){
             if(user.getUsername().equalsIgnoreCase(username)){
                 return user;
@@ -323,7 +327,7 @@ public class Main {
     }
 
     private static Etiqueta findEtiqueta(String name){
-        for (Etiqueta et: DBetiqueta.getAllEtiquetas()) {
+        for (Etiqueta et: EtiquetaServices.getInstancia().findAll()) {
             if(et.getEtiqueta().equalsIgnoreCase(name)){
                 return et;
             }
@@ -332,7 +336,7 @@ public class Main {
     }
 
     private static Etiqueta findEtiById (long id){
-        for (Etiqueta et: DBetiqueta.getAllEtiquetas()) {
+        for (Etiqueta et: EtiquetaServices.getInstancia().findAll()) {
             if(et.getId()==id){
                 return et;
             }
@@ -340,8 +344,8 @@ public class Main {
         return null;
     }
 
-    private  static void loadRelacion (List<Articulo> allArticulos){
-        List<RelacionEti_Art> allRelacion = DBartEti.getAllRelacionEti_Art();
+   /* private  static void loadRelacion (List<Articulo> allArticulos){
+        List<RelacionEti_Art> allRelacion = RelacionServices.getInstancia().findAll();
         for (Articulo art: allArticulos) {
             art.setListaEtiqueta(new ArrayList<Etiqueta>());
             art.setListaComentarios(new ArrayList<Comentario>());
@@ -357,10 +361,10 @@ public class Main {
     }
 
     private static void loadComentario(Articulo art){
-      List<ComentarioDB> listComent = DBcomentario.getComentarioByArt(art.getId());
+      List<Comentario> listComent = ComentarioServices.getInstancia().findAll();
         ArrayList<Comentario> allListComent = new ArrayList<>();
-        for (ComentarioDB comentDb: listComent) {
-            Comentario comen = new Comentario(comentDb.getComentario(),finUser(comentDb.getAutor()),art);
+        for (Comentario comentDb: listComent) {
+            Comentario comen = new Comentario(comentDb.getComentario(),comentDb.getAutor(),art);
             allListComent.add(comen);
         }
       for (Comentario coment: allListComent) {
@@ -369,7 +373,7 @@ public class Main {
     }
 
     private  static void loadRelacionByOne (Articulo art){
-        List<RelacionEti_Art> allRelacion = DBartEti.getAllRelacionEti_Art();
+        List<RelacionEti_Art> allRelacion = RelacionServices.getInstancia().findAll();
             art.setListaEtiqueta(new ArrayList<Etiqueta>());
             for (RelacionEti_Art rel : allRelacion) {
                 if(rel.getId_Art()==art.getId()){
@@ -411,7 +415,7 @@ public class Main {
         }
         return false;
     }
-
+*/
 
 
 
