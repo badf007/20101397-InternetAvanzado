@@ -1,9 +1,16 @@
 package logica;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /**
  * Created by Leny96 on 15/6/2017.
  */
-public class Usuario {
+@Entity
+public class Usuario implements Serializable {
+
+    @Id
     private String username;
     private String nombre;
     private String password;

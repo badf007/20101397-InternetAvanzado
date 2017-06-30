@@ -5,6 +5,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.Version;
 import logica.*;
+import services.ArticulosServices;
 import spark.Request;
 import spark.Spark;
 
@@ -29,6 +30,7 @@ public class Main {
     static ArticuloDaoEtiqueta DBartEti = new ArticuloDaoEtiqueta();
     static ArrayList<Articulo> listArticulos = new ArrayList<>();
     //http://localhost:4567
+
 
 
     public static void main(String[] args) {

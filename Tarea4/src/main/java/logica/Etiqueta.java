@@ -1,9 +1,15 @@
 package logica;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /**
  * Created by Leny96 on 15/6/2017.
  */
-public class Etiqueta {
+@Entity
+public class Etiqueta implements Serializable {
+    @Id
     private long id;
     private String nombre;
 
