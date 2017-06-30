@@ -32,8 +32,7 @@ public class Main {
         staticFileLocation("/publico");
         final Configuration configuration = new Configuration(new Version(2, 3, 0));
         configuration.setClassForTemplateLoading(Main.class, "/");
-        loadUsuario();
-        loadArticulo();
+        loadDemo();
         List<Articulo> allArticulos = ArticulosServices.getInstancia().findAll();
         //loadRelacion(allArticulos);
 
@@ -294,17 +293,21 @@ public class Main {
         */
     }
 
-    private static void loadUsuario() {
+    private static void loadDemo() {
         if(UsuarioServices.getInstancia().findAll().size()==0){
             UsuarioServices.getInstancia().cargarDemo();
         }
-    }
 
-    private static void loadArticulo() {
+        if(EtiquetaServices.getInstancia().findAll().size()==0){
+            EtiquetaServices.getInstancia().cargarDemo();
+        }
+
         if(ArticulosServices.getInstancia().findAll().size()==0){
-                ArticulosServices.getInstancia().cargarDemo();
+            ArticulosServices.getInstancia().cargarDemo();
         }
     }
+
+
     private static void checkCOOKIES(Request req) {
         if (req.session().attribute(SESSION_NAME) == null) {
             Map<String, String> cookies = req.cookies();

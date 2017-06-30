@@ -1,6 +1,7 @@
 package logica;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @Entity
 public class Etiqueta implements Serializable {
     @Id
+    @GeneratedValue
     private long id;
     private String nombre;
 
@@ -17,8 +19,7 @@ public class Etiqueta implements Serializable {
 
     }
 
-    public Etiqueta(long id, String etiqueta) {
-        this.id = id;
+    public Etiqueta( String etiqueta) {
         this.nombre = etiqueta;
     }
 

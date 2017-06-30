@@ -11,7 +11,8 @@ import java.util.Set;
 @Entity
 public class Articulo implements Serializable{
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
     private String titulo;
     private String cuerpo;
@@ -40,8 +41,7 @@ public class Articulo implements Serializable{
         this.cuerpo70 = cuerpo70;
     }
 
-    public Articulo(String titulo, String cuerpo, Usuario autor, String fecha, Set<Comentario> listacoment, Set<Etiqueta> listaetiquet) {
-        this.id = id;
+    public Articulo(String titulo, String cuerpo,String cuerpo70, Usuario autor, String fecha, Set<Comentario> listacoment, Set<Etiqueta> listaetiquet) {
         this.titulo = titulo;
         this.cuerpo = cuerpo;
         this.autor = autor;

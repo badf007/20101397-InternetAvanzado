@@ -1,9 +1,6 @@
 package logica;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -13,6 +10,7 @@ import java.io.Serializable;
 public class Comentario implements Serializable {
 
     @Id
+    @GeneratedValue
     private long id;
     private String comentario;
 
@@ -26,7 +24,6 @@ public class Comentario implements Serializable {
     }
 
     public Comentario(String comentario, Usuario autor, Articulo articulo) {
-        this.id = id;
         this.comentario = comentario;
         this.autor = autor;
         this.articulo = articulo;
