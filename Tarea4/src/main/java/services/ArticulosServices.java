@@ -5,6 +5,8 @@ import logica.Comentario;
 import logica.Etiqueta;
 import logica.GestionDB;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -25,6 +27,6 @@ public class ArticulosServices extends GestionDB<Articulo> {
         return instancia;
     }
     public void cargarDemo(){
-        crearEntidad(new Articulo("Primer Post","Este es elprimer post del blog", findAllByUser("lenyluna"),"16/06/2017", new Set<Comentario> , new Set<EtiquetaServices> ));
+        instancia.crearEntidad(new Articulo("Primer Post","Este es elprimer post del blog", findAllByUser("lenyluna"),"16/06/2017", new HashSet<Comentario>(), new HashSet<Etiqueta>() ));
     }
 }
