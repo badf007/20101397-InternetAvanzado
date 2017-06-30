@@ -22,7 +22,7 @@ public class ConfigDB {
     public void startDb() {
         try {
             Server.createTcpServer("-tcpPort",
-                    "9092",
+                    "4500",
                     "-tcpAllowOthers",
                     "-tcpDaemon").start();
         }catch (SQLException ex){

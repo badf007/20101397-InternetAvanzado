@@ -7,6 +7,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>logica.Articulo</class>
         <class>logica.Usuario</class>
+        <class>logica.Comentario</class>
         <class>logica.Etiqueta</class>
         <class>logica.RelacionEti_Art</class>
         <class>logica.Usuario</class>

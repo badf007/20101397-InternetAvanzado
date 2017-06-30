@@ -18,13 +18,13 @@ public class Articulo implements Serializable{
     private String fecha;
     private String cuerpo70;
 
-    @OneToOne
+    @ManyToOne(targetEntity = Usuario.class)
     private Usuario autor;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Comentario.class)
     private Set<Comentario> listaComentarios;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Etiqueta.class)
     private Set<Etiqueta> listaEtiqueta;
 
 
