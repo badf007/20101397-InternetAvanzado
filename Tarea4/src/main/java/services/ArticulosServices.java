@@ -27,7 +27,9 @@ public class ArticulosServices extends GestionDB<Articulo> {
     public void cargarDemo(){
        Set<Etiqueta> listEtiqueta  = new HashSet<>();
         listEtiqueta.add(EtiquetaServices.getInstancia().find((long)25));
-        instancia.crearEntidad(new Articulo("Primer Post","Este es el primer post del blog","", findAllByUser("lenyluna"),"16/06/2017", new HashSet<Comentario>() , listEtiqueta));
+        Set<Comentario> listaComent = new HashSet<>();
+        listaComent.add(new Comentario("que lo que", findAllByUser("lenyluna"),null));
+        instancia.crearEntidad(new Articulo("Primer Post","Este es el primer post del blog","", findAllByUser("lenyluna"),"16/06/2017", listaComent , null));
         //instancia.crearEntidad(new Articulo("Segundo Post","Este es el segundo post del blog", "",findAllByUser("zomgod"),"16/06/2017", new HashSet<Comentario>(), new HashSet<Etiqueta>() ));
     }
 }

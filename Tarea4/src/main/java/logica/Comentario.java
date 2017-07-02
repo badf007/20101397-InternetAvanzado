@@ -10,13 +10,14 @@ import java.io.Serializable;
 public class Comentario implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String comentario;
 
-    @OneToOne
+    @ManyToOne (targetEntity = Usuario.class)
     private Usuario autor;
-    @OneToOne
+
+    @ManyToOne (targetEntity = Articulo.class)
     private Articulo articulo;
 
     public Comentario(){

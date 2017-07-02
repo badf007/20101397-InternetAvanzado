@@ -12,7 +12,7 @@ import java.util.Set;
 public class Articulo implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String titulo;
     private String cuerpo;
@@ -22,10 +22,10 @@ public class Articulo implements Serializable{
     @ManyToOne(targetEntity = Usuario.class)
     private Usuario autor;
 
-    @ManyToOne(targetEntity = Comentario.class)
+    @OneToMany(targetEntity = Comentario.class,mappedBy = "articulo")
     private Set<Comentario> listaComentarios;
 
-    @ManyToOne(targetEntity = Etiqueta.class)
+    @OneToMany(targetEntity = Etiqueta.class)
     private Set<Etiqueta> listaEtiqueta;
 
 
