@@ -22,7 +22,6 @@ import static spark.debug.DebugScreen.enableDebugScreen;
 public class Main {
     private static final String COOKIE_NAME = "user_cookies" ;
     private static String SESSION_NAME= "username";
-    static ArrayList<Articulo> listArticulos = new ArrayList<>();
     //http://localhost:4567
 
 
@@ -34,7 +33,6 @@ public class Main {
         configuration.setClassForTemplateLoading(Main.class, "/");
         loadDemo();
         List<Articulo> allArticulos = ArticulosServices.getInstancia().findAll();
-        //loadRelacion(allArticulos);
 
         Spark.before("/guardandoarticulo",(request, response) -> {
             Usuario user = finUser(request.session().attribute(SESSION_NAME));
@@ -75,7 +73,6 @@ public class Main {
                 Template formTemplate = configuration.getTemplate("templates/index.ftl");
                 Map<String, Object> map = new HashMap<>();
                 List<Articulo> listArtClone = ArticulosServices.getInstancia().findAll(); // (ArrayList<Articulo>) listArticulos.clone();
-                System.out.println("---------------ESTA ES LA LISTA:");
                 Collections.reverse(listArtClone);
                 map.put("ListaArticulos",listArtClone);
 
@@ -112,7 +109,7 @@ public class Main {
                     System.out.println("NINGUN USUARIO CON ESA COBINACION DE PARAMETROS ");
                    Template formTemplate = configuration.getTemplate("templates/ventanaLogin.ftl");
                     Map<String, Object> map = new HashMap<>();
-                    map.put("ListaArticulos", listArticulos);
+                    map.put("ListaArticulos", ArticulosServices.getInstancia().findAll());
                     map.put("login", "false");
                     map.put("cargando", "true");
                     map.put("username",username);
@@ -174,7 +171,7 @@ public class Main {
             return null;
         });
 
-       /* Spark.get("/CrearArticulo/",(request, response) -> {
+       Spark.get("/CrearArticulo/",(request, response) -> {
             StringWriter writer = new StringWriter();
             Usuario user = finUser(request.session().attribute(SESSION_NAME));
             Template formTemplate = configuration.getTemplate("templates/crearArticulo.ftl");
@@ -191,43 +188,29 @@ public class Main {
             Usuario user = finUser(request.session().attribute(SESSION_NAME));
             Date date = new Date();
             SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
-            Articulo art = new Articulo(titulo, cuerpo, user.getUsername(),format.format(date).toString());
             String etiqueta[] = request.queryParams("etiqueta").split(",");
-
+            Set<Etiqueta> listEtiqueta  = new HashSet<>();
+            for(int i=0; i<etiqueta.length; i++){
+                Etiqueta et = findEtiqueta(etiqueta[i]);
+                if (et == null) {
+                    Etiqueta et2 = new Etiqueta(etiqueta[i]);
+                    listEtiqueta.add(et2);
+                } else {
+                    listEtiqueta.add(et);
+                }
+            }
+            for (Etiqueta et: listEtiqueta) {
+                EtiquetaServices.getInstancia().crearEntidad(et);
+            }
             if(!existe_articulo(titulo)) {
-
-
-                for (int i = 0; i < etiqueta.length; i++) {
-                    Etiqueta et = findEtiqueta(etiqueta[i]);
-                    if (et == null) {
-                        Etiqueta et2 = new Etiqueta(-1, etiqueta[i]);
-                        try {
-                            DBetiqueta.crearEtiqueta(et2.getEtiqueta());
-                            et2.setId(DBetiqueta.lastEtiq());
-                            art.addEtiqueta(et2);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        art.addEtiqueta(et);
-                    }
-                }
-                try {
-                    DBarticulos.createArticulo(art);
-                    art.setId(DBarticulos.lastArt());
-                    for (Etiqueta et : art.getListaEtiqueta()) {
-                        DBartEti.createRelacion(et.getId(), art.getId());
-                    }
-                    loadRelacionByOne(art);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
+                Articulo art = new Articulo(titulo, cuerpo, user, format.format(date).toString(), new HashSet<Comentario>(), listEtiqueta);
+                art.setCuerpo70(caracter(cuerpo));
+                ArticulosServices.getInstancia().crearEntidad(art);
             }
             response.redirect("/");
             return null;
         });
-*/
+
         Spark.get("/articulo/:id",(request, response) -> {
             StringWriter writer = new StringWriter();
             long id = Long.parseLong(request.params("id"));
@@ -252,7 +235,7 @@ public class Main {
             }
             return writer;
         });
-/*
+
         Spark.post("/articulo/:id/comentario",(request, response) ->{
             StringWriter writer = new StringWriter();
             String comentario = request.queryParams("comentario");
@@ -262,11 +245,8 @@ public class Main {
             if(user!=null) {
                 Comentario com = new Comentario(comentario, user, art);
                 art.addComentario(com);
-                try {
-                    DBcomentario.createData(com);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                ComentarioServices.getInstancia().crearEntidad(com);
+                ArticulosServices.getInstancia().editar(art);
             }
             response.redirect("/articulo/"+id);
             return null;
@@ -275,23 +255,15 @@ public class Main {
         Spark.get("/articulo/:id/EliminarArt",(request, response) ->{
             long id = Long.parseLong(request.params("id"));
             Articulo art =findArtById (id);
-            try {
-                DBcomentario.removeComent(art.getId());
-                DBartEti.removeRelacion(art.getId());
-                for (Etiqueta eti : art.getListaEtiqueta()) {
-                  if(DBartEti.getRelacionByEti(eti.getId()).size()==0){
-                   DBetiqueta.removeEtiqueta(eti.getId());
-                  }
-                }
-                DBarticulos.removeArticulo(art.getId());
-                listArticulos.remove(art);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
+            art.getListaEtiqueta().removeAll(art.getListaEtiqueta());
+            art.getListaComentarios().removeAll(art.getListaComentarios());
+            ArticulosServices.getInstancia().editar(art);
+            ArticulosServices.getInstancia().eliminar(id);
             response.redirect("/");
             return null;
         });
-        */
+
     }
 
     private static void loadDemo() {
@@ -339,55 +311,8 @@ public class Main {
        return null;
     }
 
-    private static Etiqueta findEtiById (long id){
-        for (Etiqueta et: EtiquetaServices.getInstancia().findAll()) {
-            if(et.getId()==id){
-                return et;
-            }
-        }
-        return null;
-    }
 
-   /* private  static void loadRelacion (List<Articulo> allArticulos){
-        List<RelacionEti_Art> allRelacion = RelacionServices.getInstancia().findAll();
-        for (Articulo art: allArticulos) {
-            art.setListaEtiqueta(new ArrayList<Etiqueta>());
-            art.setListaComentarios(new ArrayList<Comentario>());
-            for (RelacionEti_Art rel : allRelacion) {
-                if(rel.getId_Art()==art.getId()){
-                    art.getListaEtiqueta().add(findEtiById(rel.getId_Eti()));
-                }
-            }
-            art.setCuerpo70(caracter(art.getCuerpo()));
-            loadComentario(art);
-            listArticulos.add(art);
-        }
-    }
 
-    private static void loadComentario(Articulo art){
-      List<Comentario> listComent = ComentarioServices.getInstancia().findAll();
-        ArrayList<Comentario> allListComent = new ArrayList<>();
-        for (Comentario comentDb: listComent) {
-            Comentario comen = new Comentario(comentDb.getComentario(),comentDb.getAutor(),art);
-            allListComent.add(comen);
-        }
-      for (Comentario coment: allListComent) {
-            art.addComentario(coment);
-        }
-    }
-
-    private  static void loadRelacionByOne (Articulo art){
-        List<RelacionEti_Art> allRelacion = RelacionServices.getInstancia().findAll();
-            art.setListaEtiqueta(new ArrayList<Etiqueta>());
-            for (RelacionEti_Art rel : allRelacion) {
-                if(rel.getId_Art()==art.getId()){
-                    art.getListaEtiqueta().add(findEtiById(rel.getId_Eti()));
-                }
-            }
-            art.setCuerpo70(caracter(art.getCuerpo()));
-            loadComentario(art);
-            listArticulos.add(art);
-    }
 
     public static String caracter(String cuerpo){
         String caracter70 = "";
@@ -400,7 +325,7 @@ public class Main {
         }
         return caracter70;
     }
-*/
+
     private static Articulo findArtById (long id){
         for (Articulo art: ArticulosServices.getInstancia().findAll()) {
             if(art.getId()==id){
@@ -409,17 +334,17 @@ public class Main {
         }
         return null;
     }
-/*
+
     private static boolean existe_articulo (String titulo){
 
-        for (Articulo art: listArticulos) {
-            if(art.getTitulo()== titulo){
+        for (Articulo art: ArticulosServices.getInstancia().findAll()) {
+            if(art.getTitulo().equalsIgnoreCase(titulo)){
                 return true;
             }
         }
         return false;
     }
-*/
+
 
 
 

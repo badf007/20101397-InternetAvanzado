@@ -71,6 +71,19 @@ public class GestionDB<T> {
 
     }
 
+    public void editar(T entidad){
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        try {
+            em.merge(entidad);
+            em.getTransaction().commit();
+        } catch(Exception  ex){
+            em.getTransaction().rollback();
+            throw ex;
+        } finally {
+            em.close();
+        }
+    }
 
     public T find(Object id) {
         EntityManager em = getEntityManager();
@@ -104,6 +117,21 @@ public class GestionDB<T> {
         query.setParameter("username", "%"+username+"%");
         return (Usuario) query.getSingleResult();
 
+    }
+
+    public void eliminar(Object  entidadId){
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        try {
+            T entidad = em.find(claseEntidad, entidadId);
+            em.remove(entidad);
+            em.getTransaction().commit();
+        }catch (Exception ex){
+            em.getTransaction().rollback();
+            throw  ex;
+        } finally {
+            em.close();
+        }
     }
 
 }

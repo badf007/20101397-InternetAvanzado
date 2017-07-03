@@ -41,14 +41,14 @@ public  class Articulo implements Serializable{
         this.cuerpo70 = cuerpo70;
     }
 
-    public Articulo(String titulo, String cuerpo,String cuerpo70, Usuario autor, String fecha, Set<Comentario> listacoment, Set<Etiqueta> listaetiquet) {
+    public Articulo(String titulo, String cuerpo, Usuario autor, String fecha, Set<Comentario> listacoment, Set<Etiqueta> listaetiquet) {
         this.titulo = titulo;
         this.cuerpo = cuerpo;
         this.autor = autor;
         this.fecha = fecha;
         this.listaComentarios = listacoment;
         this.listaEtiqueta = listaetiquet;
-        this.cuerpo70 = cuerpo70;
+        this.cuerpo70= "";
     }
 
 

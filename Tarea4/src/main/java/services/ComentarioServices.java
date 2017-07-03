@@ -20,5 +20,4 @@ public class ComentarioServices extends GestionDB<Comentario> {
         return instancia;
     }
 
-
 }

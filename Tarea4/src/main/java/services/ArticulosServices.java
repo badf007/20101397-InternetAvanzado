@@ -26,10 +26,14 @@ public class ArticulosServices extends GestionDB<Articulo> {
     }
     public void cargarDemo(){
        Set<Etiqueta> listEtiqueta  = new HashSet<>();
-        listEtiqueta.add(EtiquetaServices.getInstancia().find((long)25));
-        Set<Comentario> listaComent = new HashSet<>();
-        listaComent.add(new Comentario("que lo que", findAllByUser("lenyluna"),null));
-        instancia.crearEntidad(new Articulo("Primer Post","Este es el primer post del blog","", findAllByUser("lenyluna"),"16/06/2017", listaComent , null));
-        //instancia.crearEntidad(new Articulo("Segundo Post","Este es el segundo post del blog", "",findAllByUser("zomgod"),"16/06/2017", new HashSet<Comentario>(), new HashSet<Etiqueta>() ));
+        listEtiqueta.add(EtiquetaServices.getInstancia().find((long)1));
+        Set<Etiqueta> listEtiqueta2  = new HashSet<>();
+        listEtiqueta2.add(EtiquetaServices.getInstancia().find((long)2));
+        Articulo art1 = new Articulo("Primer Post","Este es el primer post del blog", findAllByUser("lenyluna"),"16/06/2017",new HashSet<Comentario>(), listEtiqueta);
+        art1.setCuerpo70("Este es el primer post del blog");
+        Articulo art2 =new Articulo("Segundo Post","Este es el segundo post del blog",findAllByUser("zomgod"),"16/06/2017", new HashSet<Comentario>(), listEtiqueta2);
+        art2.setCuerpo70("Este es el segundo post del blog");
+        instancia.crearEntidad(art1);
+        instancia.crearEntidad(art2);
     }
 }
