@@ -9,7 +9,7 @@ import java.util.Set;
  * Created by Leny96 on 15/6/2017.
  */
 @Entity
-public class Articulo implements Serializable{
+public  class Articulo implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,10 +22,10 @@ public class Articulo implements Serializable{
     @ManyToOne(targetEntity = Usuario.class)
     private Usuario autor;
 
-    @OneToMany(targetEntity = Comentario.class,mappedBy = "articulo")
+    @OneToMany(targetEntity = Comentario.class,mappedBy = "articulo",fetch = FetchType.EAGER)
     private Set<Comentario> listaComentarios;
 
-    @OneToMany(targetEntity = Etiqueta.class)
+    @OneToMany(targetEntity = Etiqueta.class,fetch = FetchType.EAGER)
     private Set<Etiqueta> listaEtiqueta;
 
 
@@ -49,6 +49,11 @@ public class Articulo implements Serializable{
         this.listaComentarios = listacoment;
         this.listaEtiqueta = listaetiquet;
         this.cuerpo70 = cuerpo70;
+    }
+
+
+    public Articulo(){
+
     }
 
     public Set<Comentario> getListaComentarios() {

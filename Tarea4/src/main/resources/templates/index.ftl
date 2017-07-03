@@ -148,14 +148,18 @@
                 ${articulo.titulo}
             </h2>
             <p class="lead">
-                by <a href="index.php">${articulo.autor}</a>
+                by <a href="index.php">${articulo.autor.username}</a>
             </p>
             <p><span class="glyphicon glyphicon-time"></span> Posted on ${articulo.fecha}</p>
             <p>${articulo.cuerpo70} .......</p>
             <p><b>Etiquetas del art&iacuteculo:</b>
+                <#if articulo.listaEiqueta??>
                 <#list articulo.listaEtiqueta as etiqueta>
                 ${etiqueta.etiqueta},
                 </#list>
+                <#else >
+
+                </#if>
             </p>
             <a class="btn btn-primary" href="/articulo/${articulo.id}" >Leer mas <span class="glyphicon glyphicon-chevron-right"></span></a>
 

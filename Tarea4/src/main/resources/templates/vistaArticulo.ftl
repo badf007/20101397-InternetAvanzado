@@ -143,7 +143,7 @@
 
             <!-- Author -->
             <p class="lead">
-                by <a href="#">${articulo.autor}</a>
+                by <a href="#">${articulo.autor.username}</a>
             </p>
 
             <hr>
@@ -177,6 +177,7 @@
 
             <!-- Comment -->
             <p class="lead"> Lista de Comentarios:</p>
+<#if listComent??>
             <#list listComent as comentario>
                 <div class="media">
 
@@ -190,6 +191,9 @@
                 </div>
             <hr/>
             </#list>
+<#else >
+
+</#if>
 
 
         </div>

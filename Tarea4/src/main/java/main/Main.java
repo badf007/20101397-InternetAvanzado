@@ -74,7 +74,8 @@ public class Main {
             try {
                 Template formTemplate = configuration.getTemplate("templates/index.ftl");
                 Map<String, Object> map = new HashMap<>();
-                ArrayList<Articulo> listArtClone = (ArrayList<Articulo>) listArticulos.clone();
+                List<Articulo> listArtClone = ArticulosServices.getInstancia().findAll(); // (ArrayList<Articulo>) listArticulos.clone();
+                System.out.println("---------------ESTA ES LA LISTA:");
                 Collections.reverse(listArtClone);
                 map.put("ListaArticulos",listArtClone);
 
@@ -226,7 +227,7 @@ public class Main {
             response.redirect("/");
             return null;
         });
-
+*/
         Spark.get("/articulo/:id",(request, response) -> {
             StringWriter writer = new StringWriter();
             long id = Long.parseLong(request.params("id"));
@@ -251,7 +252,7 @@ public class Main {
             }
             return writer;
         });
-
+/*
         Spark.post("/articulo/:id/comentario",(request, response) ->{
             StringWriter writer = new StringWriter();
             String comentario = request.queryParams("comentario");
@@ -399,16 +400,16 @@ public class Main {
         }
         return caracter70;
     }
-
+*/
     private static Articulo findArtById (long id){
-        for (Articulo art: listArticulos) {
+        for (Articulo art: ArticulosServices.getInstancia().findAll()) {
             if(art.getId()==id){
                 return art;
             }
         }
         return null;
     }
-
+/*
     private static boolean existe_articulo (String titulo){
 
         for (Articulo art: listArticulos) {
