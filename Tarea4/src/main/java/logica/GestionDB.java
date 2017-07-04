@@ -119,6 +119,7 @@ public class GestionDB<T> {
 
     }
 
+
     public void eliminar(Object  entidadId){
         EntityManager em = getEntityManager();
         em.getTransaction().begin();

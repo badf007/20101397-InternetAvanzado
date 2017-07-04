@@ -255,11 +255,15 @@ public class Main {
         Spark.get("/articulo/:id/EliminarArt",(request, response) ->{
             long id = Long.parseLong(request.params("id"));
             Articulo art =findArtById (id);
-
+            deleteComen(art);
+            ArrayList<Etiqueta> arrayList =new ArrayList<>();
+            for(Etiqueta et : art.getListaEtiqueta()){
+                arrayList.add(et);
+            }
             art.getListaEtiqueta().removeAll(art.getListaEtiqueta());
             art.getListaComentarios().removeAll(art.getListaComentarios());
-            ArticulosServices.getInstancia().editar(art);
             ArticulosServices.getInstancia().eliminar(id);
+            veryDeleteEtique(arrayList);
             response.redirect("/");
             return null;
         });
@@ -279,8 +283,29 @@ public class Main {
             ArticulosServices.getInstancia().cargarDemo();
         }
     }
+    private static void veryDeleteEtique(ArrayList<Etiqueta> listEt){
+        for(Etiqueta et2 : listEt) {
+            for (Articulo art : ArticulosServices.getInstancia().findAll()) {
+                for (Etiqueta et : art.getListaEtiqueta()) {
+                    if (et2.getEtiqueta().equalsIgnoreCase(et.getEtiqueta())) {
+                        listEt.remove(et2);
+                    }
+                }
+            }
+        }
+        if(listEt.size()!=0){
+            for(Etiqueta et1: listEt){
+                EtiquetaServices.getInstancia().eliminar(et1.getId());
+            }
+        }
+    }
 
-
+    private static void deleteComen(Articulo art ){
+        for (Comentario com : art.getListaComentarios()) {
+            System.out.println("aasas"+com.getAutor());
+            ComentarioServices.getInstancia().eliminar(com.getId());
+        }
+    }
     private static void checkCOOKIES(Request req) {
         if (req.session().attribute(SESSION_NAME) == null) {
             Map<String, String> cookies = req.cookies();
