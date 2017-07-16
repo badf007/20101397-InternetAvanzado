@@ -65,7 +65,6 @@ public class Main {
             }
         });
 
-
         Spark.get("/", (request, response) -> {
             checkCOOKIES(request);
             StringWriter writer = new StringWriter();
