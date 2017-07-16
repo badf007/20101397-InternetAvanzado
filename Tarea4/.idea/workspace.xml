@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e0d74b-661d-452a-9cdd-8cc1357e069b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/services/ArticulosServices.class" afterPath="$PROJECT_DIR$/build/classes/main/services/ArticulosServices.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/logica/Likes.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/logica/Typeline.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/LikesServices.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/listEtiqueta.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/logica/Articulo.class" afterPath="$PROJECT_DIR$/build/classes/main/logica/Articulo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/logica/Comentario.class" afterPath="$PROJECT_DIR$/build/classes/main/logica/Comentario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/logica/Usuario.class" afterPath="$PROJECT_DIR$/build/classes/main/logica/Usuario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/main/Main.class" afterPath="$PROJECT_DIR$/build/classes/main/main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logica/GestionDB.java" afterPath="$PROJECT_DIR$/src/main/java/logica/GestionDB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/crearArticulo.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/crearArticulo.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/vistaArticulo.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/vistaArticulo.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logica/Articulo.java" afterPath="$PROJECT_DIR$/src/main/java/logica/Articulo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logica/Comentario.java" afterPath="$PROJECT_DIR$/src/main/java/logica/Comentario.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logica/Usuario.java" afterPath="$PROJECT_DIR$/src/main/java/logica/Usuario.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/crearArticulo.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/crearArticulo.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/vistaArticulo.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/vistaArticulo.ftl" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -34,28 +49,58 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="263" column="75" lean-forward="false" selection-start-line="263" selection-start-column="75" selection-end-line="263" selection-end-column="75" />
+            <state relative-caret-position="239">
+              <caret line="314" column="24" lean-forward="true" selection-start-line="314" selection-start-column="24" selection-end-line="314" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1051#1247#0" expanded="false" />
+                <element signature="e#1290#1485#0" expanded="false" />
+                <element signature="e#1537#1778#0" expanded="false" />
+                <element signature="e#1814#2215#0" expanded="false" />
+                <element signature="e#2243#3331#0" expanded="false" />
+                <element signature="e#3372#5550#0" expanded="false" />
+                <element signature="e#5585#6975#0" expanded="false" />
+                <element signature="e#7008#7230#0" expanded="false" />
+                <element signature="e#7269#7790#0" expanded="false" />
+                <element signature="e#7834#9230#0" expanded="false" />
+                <element signature="e#9268#10451#0" expanded="false" />
+                <element signature="e#10501#11197#0" expanded="false" />
+                <element signature="e#11246#11886#0" expanded="false" />
+                <element signature="e#11934#12670#0" expanded="false" />
+                <element signature="e#13855#14820#0" expanded="false" />
+                <element signature="e#14865#16286#0" expanded="false" />
+                <element signature="e#15011#15021#0" expanded="true" />
+                <element signature="method#loadDemo#0;class#Main#0" expanded="false" />
+                <element signature="method#veryDeleteEtique#0;class#Main#0" expanded="false" />
+                <element signature="e#16862#16872#0" expanded="true" />
+                <element signature="method#deleteComen#0;class#Main#0" expanded="false" />
+                <element signature="method#checkCOOKIES#0;class#Main#0" expanded="false" />
+                <element signature="method#finUser#0;class#Main#0" expanded="false" />
+                <element signature="method#addEtiquetas#0;class#Main#0" expanded="false" />
+                <element signature="method#caracter#0;class#Main#0" expanded="false" />
+                <element signature="method#findArtById#0;class#Main#0" expanded="false" />
+                <element signature="method#existe_articulo#0;class#Main#0" expanded="false" />
+                <element signature="method#veriLike#0;class#Main#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crearArticulo.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crearArticulo.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="126" column="174" lean-forward="false" selection-start-line="126" selection-start-column="174" selection-end-line="126" selection-end-column="174" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vistaArticulo.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/vistaArticulo.ftl">
+      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1536">
-              <caret line="193" column="8" lean-forward="true" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Etiqueta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logica/Etiqueta.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+            <state relative-caret-position="248">
+              <caret line="150" column="40" lean-forward="true" selection-start-line="150" selection-start-column="40" selection-end-line="150" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -64,68 +109,22 @@
       <file leaf-file-name="Articulo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logica/Articulo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+            <state relative-caret-position="238">
+              <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#813#814#0" expanded="false" />
-                <element signature="e#869#870#0" expanded="false" />
-                <element signature="e#904#905#0" expanded="false" />
-                <element signature="e#935#936#0" expanded="false" />
-                <element signature="e#983#984#0" expanded="false" />
-                <element signature="e#1023#1024#0" expanded="false" />
-                <element signature="e#1483#1484#0" expanded="false" />
-                <element signature="e#1522#1523#0" expanded="false" />
-                <element signature="e#1587#1588#0" expanded="false" />
-                <element signature="e#1637#1638#0" expanded="false" />
-                <element signature="e#1684#1685#0" expanded="false" />
-                <element signature="e#1720#1721#0" expanded="false" />
-                <element signature="e#1747#1748#0" expanded="false" />
-                <element signature="e#1772#1773#0" expanded="false" />
-                <element signature="e#1806#1807#0" expanded="false" />
-                <element signature="e#1834#1835#0" expanded="false" />
-                <element signature="e#1867#1868#0" expanded="false" />
-                <element signature="e#1896#1897#0" expanded="false" />
-                <element signature="e#1940#1941#0" expanded="false" />
-                <element signature="e#1976#1977#0" expanded="false" />
-                <element signature="e#2009#2010#0" expanded="false" />
-                <element signature="e#2038#2039#0" expanded="false" />
-                <element signature="e#2082#2083#0" expanded="false" />
-                <element signature="e#2118#2119#0" expanded="false" />
-                <element signature="e#2151#2152#0" expanded="false" />
-                <element signature="e#2179#2180#0" expanded="false" />
-                <element signature="e#2222#2223#0" expanded="false" />
-                <element signature="e#2256#2257#0" expanded="false" />
-                <element signature="e#2288#2289#0" expanded="false" />
-                <element signature="e#2316#2317#0" expanded="false" />
-                <element signature="e#2358#2359#0" expanded="false" />
-                <element signature="e#2392#2393#0" expanded="false" />
-                <element signature="e#2525#2526#0" expanded="false" />
-                <element signature="e#2566#2567#0" expanded="false" />
+                <element signature="e#2694#2695#0" expanded="true" />
+                <element signature="e#2729#2730#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticulosServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/ArticulosServices.java">
+      <file leaf-file-name="GestionDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logica/GestionDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/UsuarioServices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="-1207">
               <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="e#245#246#0" expanded="true" />
-                <element signature="e#281#282#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -503,18 +502,27 @@
         <option value="$PROJECT_DIR$/src/main/java/services/DBServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/logica/RelacionEti_Art.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/UsuarioServices.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/ConfigDB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/EtiquetaServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/logica/Etiqueta.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/Comentario.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/services/ComentarioServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/Articulo.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/ArticulosServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/logica/GestionDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/likes.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ventanaLogin.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/Typeline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/Like.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/services/EtiquetaServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/LikesServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/Likes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/Comentario.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/listEtiqueta.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/Articulo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/vistaArticulo.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/crearArticulo.ftl" />
       </list>
     </option>
   </component>
@@ -546,6 +554,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -624,6 +633,32 @@
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tarea4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tarea4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -651,6 +686,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -682,17 +721,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Practica3/Practica3/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Practicas/build.gradle" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Leny96/Documents/Dc.Universidad/Semestre2.2017/Internet Avanzado/Practica4/20101397-InternetAvanzado/Tarea4/src/main/java/services/UsuarioServices.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="logica" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1142,16 +1185,21 @@
       <workItem from="1498873342913" duration="1683000" />
       <workItem from="1498933313817" duration="11993000" />
       <workItem from="1499093613332" duration="3707000" />
-      <workItem from="1499103255502" duration="17798000" />
+      <workItem from="1499103255502" duration="17924000" />
+      <workItem from="1499141574490" duration="1559000" />
+      <workItem from="1499144259504" duration="1161000" />
+      <workItem from="1499180237765" duration="5567000" />
+      <workItem from="1499260780033" duration="36778000" />
+      <workItem from="1499460430974" duration="248000" />
+      <workItem from="1500145330512" duration="24004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52553000" />
+    <option name="totallyTimeSpent" value="121996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1162,13 +1210,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23404256" sideWeight="0.2859304" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23404256" sideWeight="0.7140696" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.7140696" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1376702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15658094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1190,7 +1238,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23404256" sideWeight="0.2859304" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23404256" sideWeight="0.2859304" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1207,10 +1255,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23404256" sideWeight="0.7140696" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.7140696" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1376702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14145234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1237,8 +1285,36 @@
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
+          <line>138</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
+          <line>418</line>
+          <properties class="main.Main" method="deleteComen">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
+          <line>489</line>
+          <properties class="main.Main" method="findArtById">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1251,137 +1327,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Comentario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/GestionDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#GestionDB#0" expanded="false" />
-            <element signature="method#getValorCampo#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#crearEntidad#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#editar#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#find#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#findAll#0;class#GestionDB#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/ArticulosServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="31" column="154" lean-forward="false" selection-start-line="31" selection-start-column="154" selection-end-line="31" selection-end-column="154" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Etiqueta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Articulo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1747#1748#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2118#2119#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2566#2567#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4947">
-          <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Comentario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/GestionDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#GestionDB#0" expanded="false" />
-            <element signature="method#getValorCampo#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#crearEntidad#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#editar#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#find#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#findAll#0;class#GestionDB#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/EtiquetaServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#292#293#0" expanded="false" />
-            <element signature="e#329#330#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logica/Etiqueta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1397,43 +1346,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="43" column="97" lean-forward="false" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1747#1748#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2118#2119#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2566#2567#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,7 +1354,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4947">
           <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1247#0" expanded="false" />
+            <element signature="e#1290#1485#0" expanded="false" />
+            <element signature="e#1537#1778#0" expanded="false" />
+            <element signature="e#1814#2215#0" expanded="false" />
+            <element signature="e#2243#3331#0" expanded="false" />
+            <element signature="e#3372#5550#0" expanded="false" />
+            <element signature="e#5585#6975#0" expanded="false" />
+            <element signature="e#7008#7230#0" expanded="false" />
+            <element signature="e#7269#7790#0" expanded="false" />
+            <element signature="e#7834#9230#0" expanded="false" />
+            <element signature="e#9268#10451#0" expanded="false" />
+            <element signature="e#10501#11197#0" expanded="false" />
+            <element signature="e#11246#11886#0" expanded="false" />
+            <element signature="e#11934#12670#0" expanded="false" />
+            <element signature="e#13855#14820#0" expanded="false" />
+            <element signature="e#14865#16286#0" expanded="false" />
+            <element signature="e#15011#15021#0" expanded="true" />
+            <element signature="method#loadDemo#0;class#Main#0" expanded="false" />
+            <element signature="method#veryDeleteEtique#0;class#Main#0" expanded="false" />
+            <element signature="e#16862#16872#0" expanded="true" />
+            <element signature="method#deleteComen#0;class#Main#0" expanded="false" />
+            <element signature="method#checkCOOKIES#0;class#Main#0" expanded="false" />
+            <element signature="method#finUser#0;class#Main#0" expanded="false" />
+            <element signature="method#addEtiquetas#0;class#Main#0" expanded="false" />
+            <element signature="method#caracter#0;class#Main#0" expanded="false" />
+            <element signature="method#findArtById#0;class#Main#0" expanded="false" />
+            <element signature="method#existe_articulo#0;class#Main#0" expanded="false" />
+            <element signature="method#veriLike#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1449,7 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1457,14 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#GestionDB#0" expanded="false" />
-            <element signature="method#getValorCampo#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#crearEntidad#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#editar#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#find#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#findAll#0;class#GestionDB#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1472,11 +1406,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#292#293#0" expanded="false" />
-            <element signature="e#329#330#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1484,7 +1414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1492,43 +1421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="43" column="97" lean-forward="true" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1747#1748#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2118#2119#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2566#2567#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1544,7 +1437,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1247#0" expanded="false" />
+            <element signature="e#1290#1485#0" expanded="false" />
+            <element signature="e#1537#1778#0" expanded="false" />
+            <element signature="e#1814#2215#0" expanded="false" />
+            <element signature="e#2243#3331#0" expanded="false" />
+            <element signature="e#3372#5550#0" expanded="false" />
+            <element signature="e#5585#6975#0" expanded="false" />
+            <element signature="e#7008#7230#0" expanded="false" />
+            <element signature="e#7269#7790#0" expanded="false" />
+            <element signature="e#7834#9230#0" expanded="false" />
+            <element signature="e#9268#10451#0" expanded="false" />
+            <element signature="e#10501#11197#0" expanded="false" />
+            <element signature="e#11246#11886#0" expanded="false" />
+            <element signature="e#11934#12670#0" expanded="false" />
+            <element signature="e#13855#14820#0" expanded="false" />
+            <element signature="e#14865#16286#0" expanded="false" />
+            <element signature="e#15011#15021#0" expanded="true" />
+            <element signature="method#loadDemo#0;class#Main#0" expanded="false" />
+            <element signature="method#veryDeleteEtique#0;class#Main#0" expanded="false" />
+            <element signature="e#16862#16872#0" expanded="true" />
+            <element signature="method#deleteComen#0;class#Main#0" expanded="false" />
+            <element signature="method#checkCOOKIES#0;class#Main#0" expanded="false" />
+            <element signature="method#finUser#0;class#Main#0" expanded="false" />
+            <element signature="method#addEtiquetas#0;class#Main#0" expanded="false" />
+            <element signature="method#caracter#0;class#Main#0" expanded="false" />
+            <element signature="method#findArtById#0;class#Main#0" expanded="false" />
+            <element signature="method#existe_articulo#0;class#Main#0" expanded="false" />
+            <element signature="method#veriLike#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1552,43 +1475,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1747#1748#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2118#2119#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2566#2567#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,7 +1483,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1247#0" expanded="false" />
+            <element signature="e#1290#1485#0" expanded="false" />
+            <element signature="e#1537#1778#0" expanded="false" />
+            <element signature="e#1814#2215#0" expanded="false" />
+            <element signature="e#2243#3331#0" expanded="false" />
+            <element signature="e#3372#5550#0" expanded="false" />
+            <element signature="e#5585#6975#0" expanded="false" />
+            <element signature="e#7008#7230#0" expanded="false" />
+            <element signature="e#7269#7790#0" expanded="false" />
+            <element signature="e#7834#9230#0" expanded="false" />
+            <element signature="e#9268#10451#0" expanded="false" />
+            <element signature="e#10501#11197#0" expanded="false" />
+            <element signature="e#11246#11886#0" expanded="false" />
+            <element signature="e#11934#12670#0" expanded="false" />
+            <element signature="e#13855#14820#0" expanded="false" />
+            <element signature="e#14865#16286#0" expanded="false" />
+            <element signature="e#15011#15021#0" expanded="true" />
+            <element signature="method#loadDemo#0;class#Main#0" expanded="false" />
+            <element signature="method#veryDeleteEtique#0;class#Main#0" expanded="false" />
+            <element signature="e#16862#16872#0" expanded="true" />
+            <element signature="method#deleteComen#0;class#Main#0" expanded="false" />
+            <element signature="method#checkCOOKIES#0;class#Main#0" expanded="false" />
+            <element signature="method#finUser#0;class#Main#0" expanded="false" />
+            <element signature="method#addEtiquetas#0;class#Main#0" expanded="false" />
+            <element signature="method#caracter#0;class#Main#0" expanded="false" />
+            <element signature="method#findArtById#0;class#Main#0" expanded="false" />
+            <element signature="method#existe_articulo#0;class#Main#0" expanded="false" />
+            <element signature="method#veriLike#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1611,7 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1619,14 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding>
-            <element signature="docComment;class#GestionDB#0" expanded="false" />
-            <element signature="method#getValorCampo#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#crearEntidad#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#editar#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#find#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#findAll#0;class#GestionDB#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1634,43 +1542,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1747#1748#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2118#2119#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2566#2567#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1678,7 +1550,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1247#0" expanded="false" />
+            <element signature="e#1290#1485#0" expanded="false" />
+            <element signature="e#1537#1778#0" expanded="false" />
+            <element signature="e#1814#2215#0" expanded="false" />
+            <element signature="e#2243#3331#0" expanded="false" />
+            <element signature="e#3372#5550#0" expanded="false" />
+            <element signature="e#5585#6975#0" expanded="false" />
+            <element signature="e#7008#7230#0" expanded="false" />
+            <element signature="e#7269#7790#0" expanded="false" />
+            <element signature="e#7834#9230#0" expanded="false" />
+            <element signature="e#9268#10451#0" expanded="false" />
+            <element signature="e#10501#11197#0" expanded="false" />
+            <element signature="e#11246#11886#0" expanded="false" />
+            <element signature="e#11934#12670#0" expanded="false" />
+            <element signature="e#13855#14820#0" expanded="false" />
+            <element signature="e#14865#16286#0" expanded="false" />
+            <element signature="e#15011#15021#0" expanded="true" />
+            <element signature="method#loadDemo#0;class#Main#0" expanded="false" />
+            <element signature="method#veryDeleteEtique#0;class#Main#0" expanded="false" />
+            <element signature="e#16862#16872#0" expanded="true" />
+            <element signature="method#deleteComen#0;class#Main#0" expanded="false" />
+            <element signature="method#checkCOOKIES#0;class#Main#0" expanded="false" />
+            <element signature="method#finUser#0;class#Main#0" expanded="false" />
+            <element signature="method#addEtiquetas#0;class#Main#0" expanded="false" />
+            <element signature="method#caracter#0;class#Main#0" expanded="false" />
+            <element signature="method#findArtById#0;class#Main#0" expanded="false" />
+            <element signature="method#existe_articulo#0;class#Main#0" expanded="false" />
+            <element signature="method#veriLike#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1686,14 +1588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#GestionDB#0" expanded="false" />
-            <element signature="method#getValorCampo#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#crearEntidad#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#editar#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#find#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#findAll#0;class#GestionDB#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1701,7 +1595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1721,63 +1614,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/RelacionEti_Art.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/ConfigDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="15" column="88" lean-forward="true" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/EtiquetaServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#292#293#0" expanded="false" />
-            <element signature="e#329#330#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Blog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#291#292#0" expanded="false" />
-            <element signature="e#325#326#0" expanded="false" />
-            <element signature="e#519#520#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#608#609#0" expanded="false" />
-            <element signature="e#644#645#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/RelacionEti_Art.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-entitymanager/5.1.0.Final/d639e1dc0bd4e53e57f19494c8984b442ca1c082/hibernate-entitymanager-5.1.0.Final-sources.jar!/org/hibernate/jpa/internal/TransactionImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -1785,18 +1622,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/RelacionServices.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/publico/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="158" column="16" lean-forward="false" selection-start-line="158" selection-start-column="16" selection-end-line="158" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/publico/js/myJquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Etiqueta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Comentario.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Blog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ventanaLogin.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="69" column="46" lean-forward="false" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/ConfigDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/UsuarioServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#281#282#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Like.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1805,121 +1697,173 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#260#261#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Articulo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/EtiquetaServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+        <state relative-caret-position="154">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1747#1748#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2118#2119#0" expanded="false" />
-            <element signature="e#2151#2152#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2566#2567#0" expanded="false" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/RelacionServices.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Typeline.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/vistaArticulo.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/LikesServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1536">
-          <caret line="193" column="8" lean-forward="true" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
+        <state relative-caret-position="-68">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Likes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Comentario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="68" column="5" lean-forward="false" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Etiqueta.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        <state relative-caret-position="153">
+          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/services/ArticulosServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="53" />
+        <state relative-caret-position="246">
+          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/listEtiqueta.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="139" column="17" lean-forward="false" selection-start-line="139" selection-start-column="17" selection-end-line="139" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Articulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding>
+            <element signature="e#2694#2695#0" expanded="true" />
+            <element signature="e#2729#2730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/vistaArticulo.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="125" column="10" lean-forward="true" selection-start-line="125" selection-start-column="10" selection-end-line="125" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logica/GestionDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#GestionDB#0" expanded="false" />
-            <element signature="method#getValorCampo#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#crearEntidad#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#editar#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#find#0;class#GestionDB#0" expanded="false" />
-            <element signature="method#findAll#0;class#GestionDB#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-1207">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/UsuarioServices.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="248">
+          <caret line="150" column="40" lean-forward="true" selection-start-line="150" selection-start-column="40" selection-end-line="150" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crearArticulo.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="126" column="174" lean-forward="false" selection-start-line="126" selection-start-column="174" selection-end-line="126" selection-end-column="174" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="263" column="75" lean-forward="false" selection-start-line="263" selection-start-column="75" selection-end-line="263" selection-end-column="75" />
-          <folding />
+        <state relative-caret-position="239">
+          <caret line="314" column="24" lean-forward="true" selection-start-line="314" selection-start-column="24" selection-end-line="314" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1247#0" expanded="false" />
+            <element signature="e#1290#1485#0" expanded="false" />
+            <element signature="e#1537#1778#0" expanded="false" />
+            <element signature="e#1814#2215#0" expanded="false" />
+            <element signature="e#2243#3331#0" expanded="false" />
+            <element signature="e#3372#5550#0" expanded="false" />
+            <element signature="e#5585#6975#0" expanded="false" />
+            <element signature="e#7008#7230#0" expanded="false" />
+            <element signature="e#7269#7790#0" expanded="false" />
+            <element signature="e#7834#9230#0" expanded="false" />
+            <element signature="e#9268#10451#0" expanded="false" />
+            <element signature="e#10501#11197#0" expanded="false" />
+            <element signature="e#11246#11886#0" expanded="false" />
+            <element signature="e#11934#12670#0" expanded="false" />
+            <element signature="e#13855#14820#0" expanded="false" />
+            <element signature="e#14865#16286#0" expanded="false" />
+            <element signature="e#15011#15021#0" expanded="true" />
+            <element signature="method#loadDemo#0;class#Main#0" expanded="false" />
+            <element signature="method#veryDeleteEtique#0;class#Main#0" expanded="false" />
+            <element signature="e#16862#16872#0" expanded="true" />
+            <element signature="method#deleteComen#0;class#Main#0" expanded="false" />
+            <element signature="method#checkCOOKIES#0;class#Main#0" expanded="false" />
+            <element signature="method#finUser#0;class#Main#0" expanded="false" />
+            <element signature="method#addEtiquetas#0;class#Main#0" expanded="false" />
+            <element signature="method#caracter#0;class#Main#0" expanded="false" />
+            <element signature="method#findArtById#0;class#Main#0" expanded="false" />
+            <element signature="method#existe_articulo#0;class#Main#0" expanded="false" />
+            <element signature="method#veriLike#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

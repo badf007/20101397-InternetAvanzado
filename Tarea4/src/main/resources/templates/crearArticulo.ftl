@@ -97,6 +97,7 @@
 </nav>
 <div class="container">
         <div class="col-md-8">
+            <#if modificar=="false">
             <h1 class="page-header">
                 Crear nuevo Art&iacuteculo
             </h1>
@@ -111,6 +112,23 @@
                      <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
                  </p>
             </form>
+            <#elseif modificar == "true">
+                <h1 class="page-header">
+                    Modificando Art&iacuteculo
+                </h1>
+                <br/>
+
+                <form method="get" action="/guardandoCambios/${articulo.id}">
+                    <input type="text" class="form-control" placeholder="Título" name="titulo" value="${articulo.titulo}"></input><br/>
+                    <textarea class="form-control" rows="10" placeholder="Cuerpo" style="resize: none;" name="cuerpo">${articulo.cuerpo}</textarea><br/>
+                    <input type="text" class="form-control" placeholder="Etiquetas" name="etiqueta"  value="${etiquetas}"></input><br/>
+                    <p align="right">
+                        <button type="submit" class="btn btn-primary" align="center"><span class="glyphicon glyphicon-save"></span> Save</button>
+                       <a href="/articulo/${articulo.id}"> <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Cancelar</button></a>
+                    </p>
+                </form>
+
+            </#if>
         </div>
     </div>
 </div>

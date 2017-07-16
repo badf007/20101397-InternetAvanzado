@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Post - ${articulo.titulo}</title>
+    <title>ULTRA BLOG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
-
     <!-- Custom CSS -->
-    <link href="/css/blog-post.css" rel="stylesheet">
+    <link href="/css/blog-home.css" rel="stylesheet">
     <link href="/css/myCSS.css" rel="stylesheet">
+
 </head>
 
 <body>
 
+<!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,16 +43,15 @@
                 <li>
                     <a href="/">Home</a>
                 </li>
-            <#if login == "true">
+
                 <li>
                     <a href="/CrearArticulo/" >Nuevo Art&iacuteculo</a>
                 </li>
-            </#if>
             <#if login =="false">
                 <li>
                     <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in</a>
                     <div id="id01" class="modal">
-                        <form class="modal-content animate" method="post" action="/login/${articulo.id}">
+                        <form class="modal-content animate" method="post" action="/login/-1">
                             <div class="imgcontainer">
                                 <span onclick="document.getElementById('id01').style.display='none'" class="close"
                                       title="Close Modal">&times;</span>
@@ -78,6 +79,8 @@
                         </form>
                     </div>
                 </li>
+            </#if>
+            <#if login=="true">
                 <li>
                     <a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</a>
                     <div id="id02" class="modal">
@@ -96,6 +99,7 @@
                                 <input type="checkbox" name="administrador">
                                 <label><b>¿Es un usuario autor?</b></label>
                                 <input type="checkbox" name="autor">
+
                             </div>
                             <div class="container2" style="background-color:#f1f1f1">
                                 <p align="center">
@@ -112,12 +116,9 @@
 
                     </div>
                 </li>
-            </#if>
-            <#if login == "true">
-                <li><a href="/articulo/${articulo.id}/modificar">Modificar</a></li>
-                <li><a href="/articulo/${articulo.id}/EliminarArt">Eliminar</a></li>
                 <li >
-                    <p style="color: white; padding-top: 15px; padding-left: 400px" >WELCOME ${username},<b><a href="/logout" style="color: white;"> log out</a> </b></p>
+                    <p style="color: white; padding-top: 15px; padding-left: 500px" >WELCOME ${username},<b><a href="/logout" style="color: white;"> log out</a> </b></p>
+
                 </li>
             </#if>
             </ul>
@@ -132,94 +133,37 @@
 
     <div class="row">
 
-        <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
 
-            <!-- Blog Post -->
+            <h1 class="page-header">
+                ${Etiqueta}
+                <small>Todos los Articulos que pertenecen a la Etiqueta</small>
+            </h1>
 
-            <!-- Title -->
-           <p align="right">Likes: ${cantLikes}   Unlikes: ${cantUnlikes}</p>
-            <h1> ${articulo.titulo}</h1>
 
-            <!-- Author -->
+        <#list ListaArticulos as articulo>
+            <!-- First Blog Post -->
+            <h2>
+            ${articulo.titulo}
+            </h2>
             <p class="lead">
-                by <a href="#">${articulo.autor.username}</a>
+                by <a href="index.php">${articulo.autor.username}</a>
             </p>
-
-            <hr>
-
-            <!-- Date/Time -->
             <p><span class="glyphicon glyphicon-time"></span> Posted on ${articulo.fecha}</p>
-
-            <!-- Post Content -->
-            <hr>
-            <p>${articulo.cuerpo}</p>
-
-            <hr>
-            <#if login =="true">
-            <#if like == "false">
-            <p align="right"><span class="glyphicon glyphicon-plus"></span> <a href="/articulo/${articulo.id}/like"> Like </a> <span class="glyphicon glyphicon-minus"></span> <a href="/articulo/${articulo.id}/Unlike"> Unlike</a></p>
-            </#if>
-            </#if>
-                <br/>
-            <!-- Blog Comments -->
-
-            <!-- Comments Form -->
-            <div class="well">
-                <h4>Comentario:</h4>
-                <form role="form" action="/articulo/${articulo.id}/comentario" method="post">
-                    <div class="form-group">
-                        <textarea name="comentario" class="form-control" rows="3" placeholder="Escribe tu comentario aqui" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+            <p>${articulo.cuerpo70} .......</p>
+            <p><b>Etiquetas del art&iacuteculo:</b>
+                <#list articulo.listaEtiqueta as etiqueta>
+                ${etiqueta.etiqueta},
+                </#list>
+            </p>
+            <a class="btn btn-primary" href="/articulo/${articulo.id}" >Leer mas <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             <hr>
-
-            <!-- Posted Comments -->
-
-            <!-- Comment -->
-            <p class="lead"> Lista de Comentarios:</p>
-<#if listComent??>
-            <#list listComent as comentario>
-                <div class="media">
-                   <a class="pull-left">
-                        <img class="media-object" src="/img/comentarios.jpg" alt="" style="width: 64px; height: 64px">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">${comentario.autor.username}</h4>
-                         ${comentario.comentario}
-                    </div>
-                </div>
-            <hr/>
-            </#list>
-<#else >
-
-</#if>
-
+        </#list>
 
         </div>
 
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-            <!-- Blog Categories Well -->
-            <div class="well">
-                <h4>Etiquetas del art&iacuteculo:</h4>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                        <#list listEti as etiqueta>
-                            <li><a href="/findEtiqueta/${etiqueta.id}"> ${etiqueta.etiqueta}</a>
-                            </li>
-                        </#list>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </div>
-        </div>
 
     </div>
     <!-- /.row -->
@@ -228,21 +172,18 @@
 
     <!-- Footer -->
     <footer>
-        <div class="row">
-            <div class="col-lg-12" align="center">
+        <div class="row" align="center">
+            <div class="col-lg-12">
                 <p>Copyright &copy;</p>
             </div>
+            <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
     </footer>
-
 </div>
-<!-- /.container -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+<!-- jQuery-->
+<script src="/js/jquery.js"></script>
 <script src="/js/myJquery.js"></script>
-
 </body>
 
 </html>

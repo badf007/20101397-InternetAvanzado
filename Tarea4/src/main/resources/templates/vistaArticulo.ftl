@@ -96,7 +96,6 @@
                                 <input type="checkbox" name="administrador">
                                 <label><b>¿Es un usuario autor?</b></label>
                                 <input type="checkbox" name="autor">
-
                             </div>
                             <div class="container2" style="background-color:#f1f1f1">
                                 <p align="center">
@@ -115,7 +114,7 @@
                 </li>
             </#if>
             <#if login == "true">
-                <li><a href="#">Modificar</a></li>
+                <li><a href="/articulo/${articulo.id}/modificar">Modificar</a></li>
                 <li><a href="/articulo/${articulo.id}/EliminarArt">Eliminar</a></li>
                 <li >
                     <p style="color: white; padding-top: 15px; padding-left: 400px" >WELCOME ${username},<b><a href="/logout" style="color: white;"> log out</a> </b></p>
@@ -139,6 +138,7 @@
             <!-- Blog Post -->
 
             <!-- Title -->
+           <p align="right">Likes: ${cantLikes}   Unlikes: ${cantUnlikes}</p>
             <h1> ${articulo.titulo}</h1>
 
             <!-- Author -->
@@ -151,13 +151,17 @@
             <!-- Date/Time -->
             <p><span class="glyphicon glyphicon-time"></span> Posted on ${articulo.fecha}</p>
 
-            <hr>
-
             <!-- Post Content -->
+            <hr>
             <p>${articulo.cuerpo}</p>
 
             <hr>
-
+            <#if login =="true">
+            <#if like == "false">
+            <p align="right"><span class="glyphicon glyphicon-plus"></span> <a href="/articulo/${articulo.id}/like"> Like </a> <span class="glyphicon glyphicon-minus"></span> <a href="/articulo/${articulo.id}/Unlike"> Unlike</a></p>
+            </#if>
+            </#if>
+                <br/>
             <!-- Blog Comments -->
 
             <!-- Comments Form -->
@@ -180,7 +184,6 @@
 <#if listComent??>
             <#list listComent as comentario>
                 <div class="media">
-
                    <a class="pull-left">
                         <img class="media-object" src="/img/comentarios.jpg" alt="" style="width: 64px; height: 64px">
                     </a>
@@ -208,7 +211,7 @@
                     <div class="col-lg-6">
                         <ul class="list-unstyled">
                         <#list listEti as etiqueta>
-                            <li><a href="#"> ${etiqueta.etiqueta}</a>
+                            <li><a href="/findEtiqueta/${etiqueta.id}"> ${etiqueta.etiqueta}</a>
                             </li>
                         </#list>
                         </ul>

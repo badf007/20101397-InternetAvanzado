@@ -3,6 +3,7 @@ package logica;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.lang.reflect.Type;
 
 /**
  * Created by Leny96 on 15/6/2017.
@@ -16,6 +17,7 @@ public class Usuario implements Serializable {
     private String password;
     private boolean administrador;
     private boolean autor;
+
 
     public Usuario(){
 
@@ -68,4 +70,5 @@ public class Usuario implements Serializable {
     public void setAutor(boolean autor) {
         this.autor = autor;
     }
+
 }

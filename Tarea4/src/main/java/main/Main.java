@@ -167,6 +167,7 @@ public class Main {
 
         Spark.get("/logout", (request, response) -> {
              request.session().removeAttribute(SESSION_NAME);
+            // request.session().removeAttribute(SESSION_LIKES);
             response.redirect("/");
             return null;
         });
@@ -178,6 +179,7 @@ public class Main {
             Map<String, Object> map = new HashMap<>();
             map.put("username",user.getUsername());
             map.put("login", "true");
+           map.put("modificar","false");
             formTemplate.process(map, writer);
             return writer;
         });
@@ -194,6 +196,7 @@ public class Main {
                 Etiqueta et = findEtiqueta(etiqueta[i]);
                 if (et == null) {
                     Etiqueta et2 = new Etiqueta(etiqueta[i]);
+                    EtiquetaServices.getInstancia().crearEntidad(et2);
                     listEtiqueta.add(et2);
                 } else {
                     listEtiqueta.add(et);
@@ -222,11 +225,15 @@ public class Main {
             map.put("articulo",art);
             map.put("listEti",art.getListaEtiqueta());
             map.put("listComent",art.getListaComentarios());
+            map.put("cantLikes",art.cantLike());
+            map.put("cantUnlikes",art.cantUnLike());
+
                 if(user==null){
                     map.put("login", "false");
                 }else {
                     map.put("login", "true");
                     map.put("username",user.getUsername());
+                    map.put("like",veriLike(art,user));
                 }
             formTemplate.process(map, writer);
             }   catch (Exception e) {
@@ -251,7 +258,6 @@ public class Main {
             response.redirect("/articulo/"+id);
             return null;
         });
-
         Spark.get("/articulo/:id/EliminarArt",(request, response) ->{
             long id = Long.parseLong(request.params("id"));
             Articulo art =findArtById (id);
@@ -268,10 +274,110 @@ public class Main {
             return null;
         });
 
+        Spark.get("/articulo/:id/modificar",(request,response)->{
+            StringWriter writer = new StringWriter();
+            long id = Long.parseLong(request.params("id"));
+            Articulo art =ArticulosServices.getInstancia().find(id);
+            Usuario user = finUser(request.session().attribute(SESSION_NAME));
+            Template formTemplate = configuration.getTemplate("templates/crearArticulo.ftl");
+            Map<String, Object> map = new HashMap<>();
+            map.put("username",user.getUsername());
+            map.put("login", "true");
+            map.put("modificar","true");
+            map.put("articulo",art);
+            map.put("etiquetas",addEtiquetas(art));
+            formTemplate.process(map, writer);
+            return writer;
+        });
+
+        Spark.get("/guardandoCambios/:id",(request,response)->{
+            long id = Long.parseLong(request.params("id"));
+            String titulo = request.queryParams("titulo");
+            String cuerpo = request.queryParams("cuerpo");
+            Articulo art = ArticulosServices.getInstancia().find(id);
+            art.setCuerpo(cuerpo);
+            art.setTitulo(titulo);
+            String etiqueta[] = request.queryParams("etiqueta").split(",");
+            for(int i=0; i<etiqueta.length; i++) {
+                if (!existeEti(art, etiqueta[i])) {
+                    Etiqueta et = findEtiqueta(etiqueta[i]);
+                    if (et == null ) {
+                        Etiqueta et2 = new Etiqueta(etiqueta[i]);
+                        EtiquetaServices.getInstancia().crearEntidad(et2);
+                        art.getListaEtiqueta().add(et2);
+                    }else{
+                        art.getListaEtiqueta().add(et);
+                    }
+                }
+            }
+            ArticulosServices.getInstancia().editar(art);
+            response.redirect("/articulo/"+id);
+            return null;
+        });
+
+        Spark.get("/articulo/:id/:likes",(request,response )->{
+            long id = Long.parseLong(request.params("id"));
+            String opcion = request.params("likes");
+            Articulo art =findArtById (id);
+            Usuario user= finUser(request.session().attribute(SESSION_NAME));
+            if(user != null){
+                if(opcion.equalsIgnoreCase("like")){
+                    Likes like = new Likes(user,Typeline.like);
+                    LikesServices.getInstancia().crearEntidad(like);
+                    art.addLikes(like);
+                    ArticulosServices.getInstancia().editar(art);
+                }else {
+                    Likes like = new Likes(user,Typeline.unlike);
+                    LikesServices.getInstancia().crearEntidad(like);
+                    art.addLikes(like);
+                    ArticulosServices.getInstancia().editar(art);
+                }
+
+            }
+                response.redirect("/articulo/"+id);
+
+            return null;
+        });
+
+        Spark.get("/findEtiqueta/:idEti",(request,response )->{
+            long idEti = Long.parseLong(request.params("idEti"));
+           ArrayList<Articulo> listFiltro = new ArrayList<Articulo>();
+            List<Articulo> list = ArticulosServices.getInstancia().findAll();
+            for (Articulo art : list) {
+                for (Etiqueta eti: art.getListaEtiqueta()) {
+                    if(eti.getId()==idEti){
+                        listFiltro.add(art);
+                    }
+
+                }
+            }
+            StringWriter writer = new StringWriter();
+            try {
+                Template formTemplate = configuration.getTemplate("templates/listEtiqueta.ftl");
+                Map<String, Object> map = new HashMap<>();
+                map.put("ListaArticulos",listFiltro);
+                map.put("Etiqueta",EtiquetaServices.getInstancia().find(idEti).getEtiqueta());
+                Usuario user = finUser(request.session().attribute(SESSION_NAME));
+                if(user==null){
+                    map.put("login", "false");
+                }else {
+                    map.put("login", "true");
+                    map.put("username",user.getUsername());
+                }
+                formTemplate.process(map, writer);
+            } catch (Exception e) {
+                System.out.println(e.toString());
+                e.printStackTrace();
+                halt(500);
+            }
+            return writer;
+        });
+
+
     }
 
     private static void loadDemo() {
-        if(UsuarioServices.getInstancia().findAll().size()==0){
+     if(UsuarioServices.getInstancia().findAll().size() == 0){
             UsuarioServices.getInstancia().cargarDemo();
         }
 
@@ -283,19 +389,29 @@ public class Main {
             ArticulosServices.getInstancia().cargarDemo();
         }
     }
+
     private static void veryDeleteEtique(ArrayList<Etiqueta> listEt){
+        ArrayList<Etiqueta> listId = new ArrayList<Etiqueta>();
         for(Etiqueta et2 : listEt) {
             for (Articulo art : ArticulosServices.getInstancia().findAll()) {
                 for (Etiqueta et : art.getListaEtiqueta()) {
-                    if (et2.getEtiqueta().equalsIgnoreCase(et.getEtiqueta())) {
-                        listEt.remove(et2);
+                    if(et2!=null) {
+                        if (et2.getEtiqueta().equalsIgnoreCase(et.getEtiqueta())) {
+                            listId.add(et2);
+                            //listEt.remove(et2);
+                        }
                     }
                 }
             }
         }
+        for(int i=0;i<listId.size();i++){
+            listEt.remove(listId.get(i));
+        }
         if(listEt.size()!=0){
             for(Etiqueta et1: listEt){
-                EtiquetaServices.getInstancia().eliminar(et1.getId());
+                if(listEt.size()!=0) {
+                    EtiquetaServices.getInstancia().eliminar(et1.getId());
+                }
             }
         }
     }
@@ -310,12 +426,12 @@ public class Main {
         if (req.session().attribute(SESSION_NAME) == null) {
             Map<String, String> cookies = req.cookies();
             if (cookies.containsKey(COOKIE_NAME)) {
-                System.out.println("que lo que con que lo que ");
                 System.out.println("COOKIE ENCONTRADA" + cookies.get(COOKIE_NAME));
                 req.session().attribute(SESSION_NAME, cookies.get(COOKIE_NAME));
             }
         }
     }
+
 
     private static Usuario finUser(String username){
         List<Usuario> allUsuarios = UsuarioServices.getInstancia().findAll();
@@ -336,8 +452,28 @@ public class Main {
        return null;
     }
 
+    private static String addEtiquetas(Articulo art){
+        String etiquetas = "";
+        int i=0;
+        for (Etiqueta eti :art.getListaEtiqueta()) {
+            if(i==0){
+                etiquetas=eti.getEtiqueta();
+            }else{
+                etiquetas+=", "+eti.getEtiqueta();
+            }
+            i++;
+        }
+        return etiquetas;
+    }
 
-
+    private static boolean existeEti(Articulo art, String eti){
+        for (Etiqueta et: art.getListaEtiqueta()) {
+            if(et.getEtiqueta().equalsIgnoreCase(eti)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static String caracter(String cuerpo){
         String caracter70 = "";
@@ -370,7 +506,14 @@ public class Main {
         return false;
     }
 
-
+    private static String veriLike(Articulo art,Usuario user){
+        for (Likes like: art.getListLikes()) {
+            if(like.getUser().getUsername().equalsIgnoreCase(user.getUsername())){
+                return "true";
+            }
+        }
+        return "false";
+    }
 
 
 }

@@ -2,6 +2,8 @@ package logica;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Leny96 on 15/6/2017.
@@ -20,6 +22,9 @@ public class Comentario implements Serializable {
     @ManyToOne (targetEntity = Articulo.class)
     private Articulo articulo;
 
+
+
+
     public Comentario(){
 
     }
@@ -28,6 +33,7 @@ public class Comentario implements Serializable {
         this.comentario = comentario;
         this.autor = autor;
         this.articulo = articulo;
+
     }
 
     public long getId() {
@@ -61,5 +67,4 @@ public class Comentario implements Serializable {
     public void setArticulo(Articulo articulo) {
         this.articulo = articulo;
     }
-
 }

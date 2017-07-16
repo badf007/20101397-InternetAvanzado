@@ -3,6 +3,7 @@ package logica;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -19,14 +20,19 @@ public  class Articulo implements Serializable{
     private String fecha;
     private String cuerpo70;
 
+    @OneToMany(targetEntity = Likes.class, fetch = FetchType.EAGER)
+    private Set<Likes> listLikes;
+
     @ManyToOne(targetEntity = Usuario.class)
     private Usuario autor;
 
     @OneToMany(targetEntity = Comentario.class,mappedBy = "articulo",fetch = FetchType.EAGER)
     private Set<Comentario> listaComentarios;
 
-    @OneToMany(targetEntity = Etiqueta.class,fetch = FetchType.EAGER)
+    @ManyToMany(targetEntity = Etiqueta.class,fetch = FetchType.EAGER)
     private Set<Etiqueta> listaEtiqueta;
+
+
 
 
     public void setListaComentarios(Set<Comentario> listaComentarios) {
@@ -49,6 +55,7 @@ public  class Articulo implements Serializable{
         this.listaComentarios = listacoment;
         this.listaEtiqueta = listaetiquet;
         this.cuerpo70= "";
+        this.listLikes = new HashSet<>();
     }
 
 
@@ -108,13 +115,38 @@ public  class Articulo implements Serializable{
         this.fecha = fecha;
     }
 
-    public void addEtiqueta(Etiqueta et){
-            listaEtiqueta.add(et);
-
-    }
-
     public void addComentario(Comentario com){
         listaComentarios.add(com);
+    }
+
+    public void addLikes(Likes like){
+        listLikes.add(like);
+    }
+    public Set<Likes> getListLikes() {
+        return listLikes;
+    }
+
+    public void setListLikes(Set<Likes> listLikes) {
+        this.listLikes = listLikes;
+    }
+
+    public int cantLike(){
+        int cant=0 ;
+        for (Likes like: listLikes) {
+            if(like.getOpcion().name().equalsIgnoreCase("like")){
+                cant++;
+            }
+        }
+        return cant;
+    }
+    public int cantUnLike(){
+        int cant=0 ;
+        for (Likes like: listLikes) {
+            if(like.getOpcion().name().equalsIgnoreCase("unlike")){
+                cant++;
+            }
+        }
+        return cant;
     }
 }
 
